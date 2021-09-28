@@ -11,6 +11,7 @@
   justify-content: space-between;
   background-color: pink;
   height: 20vh;
+  width: 120%;
 }
 .sun {
   height: 30px;
@@ -24,4 +25,17 @@
 }
 .songs-list {
   padding: 30px;
+  padding-right: 0px;
+  padding-left: 50px;
+}
+.nav-bar {
+  position: fixed;
+  display: flex;
+  background-color: transparent;
+
+  padding-left: 10px;
+  border-width: 1px;
+  border-color: #000;
+  border-style: solid;
+  width: 100%;
 }

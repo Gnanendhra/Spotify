@@ -1,6 +1,6 @@
 .poster {
-  height: 150px;
-  width: 200px;
+  height: 100px;
+  width: 150px;
   border-radius: 10px;
   margin-right: 20px;
 }
@@ -10,4 +10,7 @@
     height: 100px;
     width: 80px;
   }
+}
+.text {
+  color: green;
 }

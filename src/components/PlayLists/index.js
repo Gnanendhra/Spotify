@@ -1,8 +1,8 @@
 import {Component} from 'react'
+
 import './index.css'
 
-import Slider from 'react-slick'
-
+/*
 const settings = {
   dots: false,
   infinite: false,
@@ -34,7 +34,8 @@ const settings = {
       },
     },
   ],
-}
+} 
+*/
 
 class PlayLists extends Component {
   state = {topList: []}
@@ -52,34 +53,38 @@ class PlayLists extends Component {
       options,
     )
     const data = await response.json()
-    this.setState({topList: data.results})
+    const dataResult = data.results.slice(0, 6)
+    this.setState({topList: dataResult})
   }
 
   renderSlider = () => {
     const {topList} = this.state
 
-    return (
-      <Slider {...settings}>
-        {topList.map(movie => {
-          const movieImage = `https://image.tmdb.org/t/p/original/${movie.poster_path}`
-          return (
-            <div key={movie.id} width="80%">
-              <img
-                className="poster"
-                src={movieImage}
-                width="100%"
-                height="100%"
-                alt="images"
-              />
-            </div>
-          )
-        })}
-      </Slider>
-    )
+    return topList.map(movie => {
+      const movieImage = `https://image.tmdb.org/t/p/original/${movie.poster_path}`
+      return (
+        <div key={movie.id} width="50%">
+          <img
+            className="poster"
+            src={movieImage}
+            width="10%"
+            height="10%"
+            alt="images"
+          />
+        </div>
+      )
+    })
   }
 
   render() {
-    return <div>{this.renderSlider()}</div>
+    return (
+      <>
+        <p className="text">FEATURED PLAYLISTS</p>
+        <div style={{display: 'flex', flexWrap: 'wrap', paddingLeft: '60px'}}>
+          {this.renderSlider()}
+        </div>
+      </>
+    )
   }
 }
 

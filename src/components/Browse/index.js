@@ -1,8 +1,6 @@
 import {Component} from 'react'
 import './index.css'
-
-import Slider from 'react-slick'
-
+/*
 const settings = {
   dots: false,
   infinite: false,
@@ -35,6 +33,7 @@ const settings = {
     },
   ],
 }
+*/
 
 class Browse extends Component {
   state = {originalsList: []}
@@ -53,38 +52,36 @@ class Browse extends Component {
     )
     const data = await response.json()
 
-    this.setState({originalsList: data.results})
+    this.setState({originalsList: data.results.slice(0, 6)})
   }
 
   renderSlider = () => {
     const {originalsList} = this.state
 
-    return (
-      <Slider {...settings}>
-        {originalsList.map(movie => {
-          const movieImage = `https://image.tmdb.org/t/p/original/${movie.poster_path}`
-          return (
-            <div key={movie.id} width="80%">
-              <img
-                className="poster"
-                src={movieImage}
-                width="100%"
-                height="100%"
-                alt="images"
-              />
-            </div>
-          )
-        })}
-      </Slider>
-    )
+    return originalsList.map(movie => {
+      const movieImage = `https://image.tmdb.org/t/p/original/${movie.poster_path}`
+      return (
+        <div key={movie.id} width="50%">
+          <img
+            className="poster"
+            src={movieImage}
+            width="10%"
+            height="10%"
+            alt="images"
+          />
+        </div>
+      )
+    })
   }
 
   render() {
     return (
-      <div>
-        <p className="trending">Originals</p>
-        {this.renderSlider()}
-      </div>
+      <>
+        <p className="text">BROWSE</p>
+        <div style={{display: 'flex', flexWrap: 'wrap', paddingLeft: '60px'}}>
+          {this.renderSlider()}
+        </div>
+      </>
     )
   }
 }

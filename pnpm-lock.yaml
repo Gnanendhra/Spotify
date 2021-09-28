@@ -7,6 +7,7 @@ dependencies:
   react: 17.0.1
   react-dom: 17.0.1_react@17.0.1
   react-icons: 4.2.0_react@17.0.1
+  react-responsive-carousel: 3.2.21
   react-router-dom: 5.3.0_react@17.0.1
   react-slick: 0.28.1_react-dom@17.0.1+react@17.0.1
   slick-carousel: 1.8.1
@@ -10288,6 +10289,14 @@ packages:
       react: 17.0.1
     resolution:
       integrity: sha512-6eV150oJZ9U2t9svnsspTMrWNyHc6chX0KzDeAOXftRa8bNeOKTTfCJ7KorIwenkHd2xqVTBTCZd79yk/lx/Ug==
+  /react-easy-swipe/0.0.21:
+    dependencies:
+      prop-types: 15.7.2
+    dev: false
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-OeR2jAxdoqUMHIn/nS9fgreI5hSpgGoL5ezdal4+oO7YSSgJR8ga+PkYGJrSrJ9MKlPcQjMQXnketrD7WNmNsg==
   /react-error-overlay/6.0.9:
     dev: true
     resolution:
@@ -10312,6 +10321,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
+  /react-responsive-carousel/3.2.21:
+    dependencies:
+      classnames: 2.3.1
+      prop-types: 15.7.2
+      react-easy-swipe: 0.0.21
+    dev: false
+    resolution:
+      integrity: sha512-y2ueGqv/yo6HQJi9IbrJVRJobp4EOrNe6BQOC61CoADg3wUjq0gqAcrtSsLQIRLtbt6nCo7cTPRX4wAkSwdiTA==
   /react-router-dom/5.3.0_react@17.0.1:
     dependencies:
       '@babel/runtime': 7.15.4
@@ -12973,6 +12990,7 @@ specifiers:
   react: 17.0.1
   react-dom: 17.0.1
   react-icons: 4.2.0
+  react-responsive-carousel: 3.2.21
   react-router-dom: 5.3.0
   react-scripts: 4.0.3
   react-slick: 0.28.1

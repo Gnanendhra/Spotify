@@ -1,8 +1,8 @@
 import {Component} from 'react'
 
-import Slider from 'react-slick'
 import './index.css'
 
+/*
 const settings = {
   dots: false,
   infinite: false,
@@ -34,7 +34,8 @@ const settings = {
       },
     },
   ],
-}
+} 
+*/
 
 class NewlyReleased extends Component {
   state = {trendingList: []}
@@ -52,34 +53,38 @@ class NewlyReleased extends Component {
       options,
     )
     const data = await response.json()
-    this.setState({trendingList: data.results})
+    const dataResult = data.results.slice(0, 6)
+    this.setState({trendingList: dataResult})
   }
 
   renderSlider = () => {
     const {trendingList} = this.state
 
-    return (
-      <Slider {...settings}>
-        {trendingList.map(movie => {
-          const movieImage = `https://image.tmdb.org/t/p/original/${movie.poster_path}`
-          return (
-            <div key={movie.id} width="80%" className="elements">
-              <img
-                className="poster"
-                src={movieImage}
-                width="100%"
-                height="100%"
-                alt="images"
-              />
-            </div>
-          )
-        })}
-      </Slider>
-    )
+    return trendingList.map(movie => {
+      const movieImage = `https://image.tmdb.org/t/p/original/${movie.poster_path}`
+      return (
+        <div key={movie.id} width="100%">
+          <img
+            className="poster"
+            src={movieImage}
+            width="5%"
+            height="5%"
+            alt="images"
+          />
+        </div>
+      )
+    })
   }
 
   render() {
-    return <div className="released">{this.renderSlider()}</div>
+    return (
+      <>
+        <p className="text">RELEASED THIS WEEK</p>
+        <div style={{display: 'flex', flexWrap: 'wrap', paddingLeft: '60px'}}>
+          {this.renderSlider()}
+        </div>
+      </>
+    )
   }
 }
 
