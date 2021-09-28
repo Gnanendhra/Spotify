@@ -1,0 +1,38 @@
+.navbar-container {
+  background-color: blue;
+  width: 12%;
+  padding: 20px;
+
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  height: 99vh;
+}
+.userField {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15%;
+}
+.face-icon {
+  height: 10vh;
+}
+.first-icon {
+  background-color: rgb(255, 0, 0, 0.2);
+}
+.userName {
+  margin-top: -10%;
+  color: #fff;
+  padding-left: 15%;
+}
+.flexField {
+  display: flex;
+
+  cursor: pointer;
+}
+.icons {
+  margin-right: 10%;
+  margin-top: 13%;
+  width: 10%;
+}

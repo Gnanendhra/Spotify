@@ -1,0 +1,28 @@
+/* Write your CSS here */
+.enjoying-music {
+  height: 100%;
+}
+.bg-container {
+  display: flex;
+  margin: 5px;
+}
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: pink;
+  height: 20vh;
+  width: 100%;
+}
+.sun {
+  height: 30px;
+}
+.dark {
+  height: 25px;
+}
+.desc {
+  color: #fff;
+  padding-right: 10%;
+}
+.songs-list {
+  padding: 30px;
+}
